@@ -1,5 +1,5 @@
 const express = require('express');
-const { connection } = require('./database/db');
+const { sequelize } = require('./models/index');
 
 const app = new express();
 
@@ -16,7 +16,7 @@ app.use('/', require('./routes'));
 
 app.listen(PORT, () => {
     console.log(`La app ha arrancado en hhtp://localhost:${PORT}`);
-    connection.sync({force: false})
+    sequelize.sync({force: false})
     .then(()=>{
         console.log('Connection success');
     });
