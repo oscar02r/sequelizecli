@@ -10,8 +10,15 @@ module.exports = {
   dialect: process.env.DB_DIALECT,
 
   //Configurar Seed
-  seederStorage: "json",
-  seederSotoragePath:"sequelizeSeeds.json",
+ // seederStorage: "json",
+   seederStorage:"sequelize",
+  //seederSotoragePath:"sequelizeSeeds.json",
+   seederStorageTableName: "seeds",
+
+  //Configurar Migraciones
+  migrationStorage:"sequelize",
+  migrationStorageTableName:"migrations",
+  
   define:{
     timestamps: false,
     //Genera claves foraneas de este tipo user_id en ves de userId

@@ -6,8 +6,8 @@ router.get('/', (req, res)=>{
       res.status(200).json({foot:"bar"});
 });
 
-router.get('/users', UserController.all );
-router.get('/addresses', AddressController.all);
+router.get('/api/users', UserController.all );
+router.get('/api/addresses', AddressController.all);
 
 
 module.exports = router;
